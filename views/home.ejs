@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Threads</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/home.css" />
+<body>
+    <div class="content-body">
+        <navbar>
+            <div class="icon logo"><i class="fa-brands fa-threads"></i></div>
+            <div class="icon nav">
+                <span><i class="fa-solid fa-house"></i></span>
+                <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                <span><i class="fa-solid fa-plus"></i></span>
+                <span><i class="fa-solid fa-heart"></i></span>
+                <span><i class="fa-solid fa-user"></i></span>
+            </div>
+            <div class="icon">
+                <span><i class="fa-solid fa-thumbtack"></i></span>
+                <span><i class="fa-solid fa-bars"></i></span>
+            </div>
+        </navbar>
+        <div class="content">
+            <div class="heading"><span>For you</span></div>
+            <div class="posts">
+                <div class="uploadpost">
+                    <img src="/profilepic.jpg" alt="profile">
+                    <input placeholder="What's new?" type="text" name="postcontent">
+                    <button>Post</button>
+                </div>
+                <% for(post of posts) { %>
+                    <div class="threadspost">
+                        <div class="profile">
+                            <img src="/profilepic.jpg" alt="profile">
+                        </div>
+                        
+                        <div class="postcontent">
+                            <div class="username">
+                                <p>ayush.x7r</p>
+                                <span><i class="fa-solid fa-ellipsis"></i></span>
+                            </div>
+                            <p><%= post.content %></p>
+                            <div class="counts">
+                                <span><i class="fa-regular fa-heart"></i></span>
+                                <span><i class="fa-regular fa-comment"><span><%= Math.floor(Math.random() * 100 + 1) %></span></i> </span>
+                                <span><i class="fa-solid fa-retweet"></i></span>
+                                <span><i class="fa-brands fa-telegram"></i></span>
+                            </div>
+                        </div>
+                       
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <div class="postThread">
+        <div class="thread">
+            <div class="thread-heading">
+                <p>New thread</p>
+                <span><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <form method="post" action="http://localhost:8080">
+                <div class="thread-content">
+                    <div class="writepost">
+                        <div class="user">
+                            <img src="/profilepic.jpg" alt="profile">
+                            <div class="content-add">
+                                <p>ayush.x7r</p>
+                                <input type="text" name="content" placeholder="What's new?" required>
+                            </div>
+                        </div>
+                        <div class="attach">
+                            <span><i class="fa-regular fa-images"></i></span>
+                            <span><i class="fa-solid fa-note-sticky"></i></span>
+                            <span><i class="fa-solid fa-hashtag"></i></span>
+                            <span><i class="fa-solid fa-square-poll-horizontal"></i></span>
+                            <span><i class="fa-solid fa-location-dot"></i></span>
+                        </div>
+                        <div class="addToThread">
+                            <img src="/profilepic.jpg" alt="profile">
+                            <p>Add to thread</p>
+                        </div>
+                    </div>
+                    <div class="setting">
+                        <p>Anyone can reply &amp; quote</p>
+                        <button>Post</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/home.js"></script>
+</body>
+</html>
