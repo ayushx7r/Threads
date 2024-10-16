@@ -312,6 +312,10 @@ body .open-thread {
     padding : 4px 0;
 }
 
+.username span i {
+    cursor : pointer;
+}
+
 .counts {
     width : 35%;
     display: flex;

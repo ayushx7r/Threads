@@ -12,16 +12,7 @@ app.use(express.static(path.join(__dirname, "/public/JS")));
 app.use(express.static(path.join(__dirname, "/public/assets")));
 app.use(express.urlencoded({extended : true}));
 
-let posts = [
-    {
-        id : uuidv4(),
-        content : "Throughout Heaven and Earth, I alone am the Honored One"
-    },
-    {
-        id : uuidv4(),
-        content : "I am Kira ! ~ Light Yagami"
-    },
-]
+let posts = [];
 
 app.listen(port, () => {
     console.log(`Listening to port : ${port}`);
