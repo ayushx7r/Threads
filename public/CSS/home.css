@@ -19,7 +19,7 @@ body {
 navbar {
     position: fixed;
     display: flex;
-    width : 5%;
+    width : 8%;
     justify-content: space-between;
     align-items : center;
     flex-direction: column;
@@ -136,11 +136,10 @@ input[type=text]:focus {
 }
 
 .postThread {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items:center;
     position : fixed;
-    z-index: -1;
     top : 0;
     left : 0;
     height : 100vh;
@@ -195,7 +194,7 @@ input[type=text]:focus {
 }
 
 body .open-thread {
-    z-index : 1;
+    display: flex;
 }
 
 .writepost {
@@ -286,6 +285,7 @@ body .open-thread {
     width : 94%;
     display : flex;
     padding : 10px 20px;
+    position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.171);
 }
 
@@ -336,4 +336,55 @@ i span {
 .counts span i:hover {
     opacity : 1;
     scale : 1.1;
+}
+
+.edits {
+    position: absolute;
+    right : 10px;
+    bottom : -10px;
+    z-index : 1;
+    background-color: #181818;
+    height : 60px;
+    width : 100px;
+    border : 1px solid rgba(255, 255, 255, 0.171);
+    padding : 10px;
+    border-radius : 5px;
+    flex-direction: column;
+    justify-content: space-around;
+    display:none;
+}
+
+.edits div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.edits div button {
+    text-align: start;
+    border : 0;
+    font-size : 15px;
+    display: flex;
+}
+
+button span {
+    padding-left : 43px;
+}
+
+.del button span {
+    padding-left : 24px;
+}
+
+.edits div:hover {
+    opacity : 1;
+    scale : 1.1;
+}
+
+.del , .del button{
+    color : red;
+}
+
+.showedits {
+    display: flex;
 }

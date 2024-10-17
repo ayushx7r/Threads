@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Threads</title>
+    <title>Home &bull; Threads</title>
+    <link rel="icon" href="/Threads_logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/home.css" />
 <body>
@@ -39,7 +40,22 @@
                         <div class="postcontent">
                             <div class="username">
                                 <p>ayush.x7r</p>
-                                <span><i class="fa-solid fa-ellipsis"></i></span>
+                                <span class="options"><i class="fa-solid fa-ellipsis"></i></span>
+                                <div class="edits">
+                                    <form>
+                                        <div>
+                                            <button>Edit<span><i class="fa-regular fa-pen-to-square"></i></span></button>
+                                            
+                                        </div>
+                                    </form>
+                                    <form method="post" action="http://localhost:8080/<%=post.id%>?_method=DELETE">
+                                        <div class="del">
+                                            <button>Delete
+                                            <span><i class="fa-regular fa-trash-can"></i></span>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                             <p><%= post.content %></p>
                             <div class="counts">
