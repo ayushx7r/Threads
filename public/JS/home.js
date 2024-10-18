@@ -2,8 +2,7 @@ let input = document.querySelector('input');
 let postBtn = document.querySelector('.uploadpost button');
 let postThread = document.querySelector('.postThread');
 let close = document.querySelector('.thread-heading span i');
-let opt = document.querySelector('.options');
-let edits = document.querySelector('.edits');
+let opts = document.querySelectorAll('.options');
 let postin = document.querySelector('.content-add input');
 
 let postThreads = () => {
@@ -16,11 +15,38 @@ let closeThread = () => {
     postThread.classList.remove('open-thread');
 };
 
-let showOptions = () => {
-    edits.classList.toggle('showedits');
+let showOptions = (e) => {
+    e.stopPropagation();
+    let edits = document.querySelectorAll('.edits');
+    for(edit of edits) {
+        edit.classList.remove('showedits');
+    }
+    let editBanner = e.target.parentElement.nextElementSibling;
+    editBanner.classList.toggle('showedits');
 };
 
 postBtn.addEventListener('click', postThreads);
 input.addEventListener('click', postThreads);
 close.addEventListener('click', closeThread);
-opt.addEventListener('click', showOptions);
+
+for(opt of opts) {
+    opt.addEventListener('click', showOptions);
+}
+
+const innerDiv = document.querySelector('.posts');
+
+const outerDiv = document.querySelector('body');
+
+
+const handleScroll = (event) => {
+    innerDiv.scrollTop += event.deltaY;
+};
+
+outerDiv.addEventListener('click', (e) => {
+    let edits = document.querySelectorAll('.edits');
+    for(edit of edits) {
+        edit.classList.remove('showedits');
+    }
+});
+
+outerDiv.addEventListener('wheel', handleScroll);
