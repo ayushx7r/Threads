@@ -18,10 +18,15 @@ let closeThread = () => {
 let showOptions = (e) => {
     e.stopPropagation();
     let edits = document.querySelectorAll('.edits');
+    let editBanner = e.target.parentElement.nextElementSibling;
+    if(editBanner.classList.contains('showedits')) {
+        editBanner.classList.remove('showedits');
+        return;
+    }
     for(edit of edits) {
         edit.classList.remove('showedits');
     }
-    let editBanner = e.target.parentElement.nextElementSibling;
+    
     editBanner.classList.toggle('showedits');
 };
 
